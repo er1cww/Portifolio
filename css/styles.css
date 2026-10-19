@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+h2 {
+    font-family: "Syne", sans-serif;
+}
+
+
+nav, header a {
+    border-radius: 20px;
+    background-color: #1B4332;
+    font-family: "Comfortaa";
+    text-decoration: none;
+    color: #F7F5F0;
+    display: flexbox;
+    padding: 20px;
+    align-items: center;
+    
+    
+    
+}
+
+nav a:hover {
+  color: #C5A059;            /* Fica dourado ao passar o mouse */
+}
+
+header {
+  display: flex;
+  justify-content: center; /* Centraliza a barra no topo */
+  margin-bottom: 30px;     /* Espaço entre o header e o bloco principal */
+}
+
+
+body{
+   
+    background-color: #141414;
+}
+
+main {
+    padding: 20px;
+    border-radius: 20px;
+    margin: 0px;
+    
+  
+  background-color: #1E1E1E;
+    
+
+}
+
+a, h1, h2, h3, p, table {
+    color: #F7F5F0;
+}
+
+table th, 
+table td {
+  padding: 10px 15px; 
+  text-align: left;
+}
+
+footer {
+  text-align: center;
+}
+
+main {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.card  {
+  padding: 24px;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.20);
+}
+
+th, td {
+  border: 1px solid #2A2A2A;
+
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+font-family:"courier new" , monospace;
+}
+
+table {
+  border-collapse: collapse;
+}
