@@ -4,15 +4,23 @@ h2 {
   font-family: "Syne", sans-serif;
 }
 
-nav, header a {
+nav {
   border-radius: 20px;
   background-color: #1B4332;
   font-family: "Comfortaa", sans-serif;
+  padding: 20px 32px;
+}
+
+.links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+nav a {
   text-decoration: none;
   color: #F7F5F0;
-  display: flex;
-  padding: 20px;
-  align-items: center;
 }
 
 nav a:hover {
@@ -78,7 +86,7 @@ table {
 }
 
 @media (max-width: 600px) {
-  header {
+  .links {
     flex-direction: column;
     gap: 8px;
   }
