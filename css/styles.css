@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Syne:wght@400..800&display=swap');
 
+/* ---------- BASE (modo escuro) ---------- */
+
+body {
+  background-color: #141414;
+  color: #F7F5F0;
+}
+
 h2 {
   font-family: "Syne", sans-serif;
 }
@@ -29,12 +36,8 @@ nav a:hover {
 
 header {
   display: flex;
-  justify-content: center; /* Centraliza a barra no topo */
-  margin-bottom: 30px;     /* Espaço entre o header e o bloco principal */
-}
-
-body {
-  background-color: #141414;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
 main {
@@ -49,21 +52,14 @@ a, h1, h2, h3, p, table {
   color: #F7F5F0;
 }
 
+table {
+  border-collapse: collapse;
+}
+
 table th,
 table td {
   padding: 10px 15px;
   text-align: left;
-}
-
-footer {
-  text-align: center;
-}
-
-.card {
-  padding: 24px;
-  margin-bottom: 24px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.20);
 }
 
 th, td {
@@ -75,8 +71,16 @@ td:nth-child(3) {
   font-family: "courier new", monospace;
 }
 
-table {
-  border-collapse: collapse;
+footer {
+  text-align: center;
+}
+
+.card {
+  padding: 24px;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  background-color: #1F2240;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.20);
 }
 
 .projetos {
@@ -84,6 +88,54 @@ table {
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
+
+/* ---------- MODO CLARO (alternativo) ---------- */
+
+.claro {
+  background-color: #F7F5F0;
+  color: #1B1B1B;
+}
+
+.claro main {
+  background-color: #FFFFFF;
+}
+
+.claro a,
+.claro h1,
+.claro h2,
+.claro h3,
+.claro p,
+.claro table {
+  color: #1B1B1B;
+}
+
+/* mantém os links da nav claros, porque o fundo dela é verde */
+.claro nav a {
+  color: #F7F5F0;
+}
+
+.claro nav a:hover {
+  color: #C5A059;
+}
+
+.claro .card {
+  background-color: #F7F5F0;
+}
+
+.claro th,
+.claro td {
+  border-color: #DDD8CC;
+}
+
+#resposta {
+  font-weight: bold;
+}
+
+.erro {
+  color: #C0392B;
+}
+
+/* ---------- RESPONSIVO ---------- */
 
 @media (max-width: 600px) {
   .links {
