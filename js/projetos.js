@@ -1,11 +1,7 @@
-const projetos = [
-  { titulo: "Site Portifólio", descricao: "Meu site, com 4 páginas, no ar." },
-  { titulo: "Arandu", descricao: "TCC de uma plataforma de turismo" },
-  { titulo: "Sistema de Irrigação Automatizado", descricao: "Um sistema para automação de irrigação em agriculturas familiares." },
-  { titulo: "Playlist", descricao: "As músicas que mais escuto." }
-];
+let todos = [];
 
 const listaProjetos = document.querySelector("#lista-projetos");
+const contagem = document.querySelector("#contagem");
 
 const criarCard = (projeto) => {
   const card = document.createElement("section");
@@ -17,18 +13,33 @@ const criarCard = (projeto) => {
   card.appendChild(titulo);
   card.appendChild(texto);
   listaProjetos.appendChild(card);
-}
+};
 
-for (const projeto of projetos) {
-  criarCard(projeto);
-}
+const mostrar = (lista) => {
+  listaProjetos.innerHTML = "";
+  for (const projeto of lista) {
+    criarCard(projeto);
+  }
+  const titulos = lista.map((projeto) => projeto.titulo);
+  contagem.textContent = `${lista.length} projetos: ${titulos.join(", ")}`;
+};
+
+const filtrar = (categoria) => {
+  const lista = todos.filter((projeto) => projeto.categoria === categoria);
+  mostrar(lista);
+};
+
+const botaoTodos = document.querySelector("#filtro-todos");
+const botaoPessoal = document.querySelector("#filtro-pessoal");
+const botaoEstudo = document.querySelector("#filtro-estudo");
+
+botaoTodos.addEventListener("click", () => mostrar(todos));
+botaoPessoal.addEventListener("click", () => filtrar("Pessoal"));
+botaoEstudo.addEventListener("click", () => filtrar("Estudo"));
 
 fetch("projetos.json")
-  .then(function (resposta) {
-    return resposta.json();
-  })
-  .then(function (projetos) {
-    for (const projeto of projetos) {
-      criarCard(projeto);
-    }
+  .then((resposta) => resposta.json())
+  .then((dados) => {
+    todos = dados;
+    mostrar(todos);
   });
