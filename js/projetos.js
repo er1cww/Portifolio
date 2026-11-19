@@ -7,7 +7,7 @@ const projetos = [
 
 const listaProjetos = document.querySelector("#lista-projetos");
 
-function criarCard(projeto) {
+const criarCard = (projeto) => {
   const card = document.createElement("section");
   card.classList.add("card");
   const titulo = document.createElement("h2");
@@ -22,3 +22,13 @@ function criarCard(projeto) {
 for (const projeto of projetos) {
   criarCard(projeto);
 }
+
+fetch("projetos.json")
+  .then(function (resposta) {
+    return resposta.json();
+  })
+  .then(function (projetos) {
+    for (const projeto of projetos) {
+      criarCard(projeto);
+    }
+  });

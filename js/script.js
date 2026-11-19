@@ -11,10 +11,10 @@ if (hora < 12) {
 }
 
 const titulo = document.querySelector("h1");
-titulo.textContent = saudacao + ", eu sou o " + nome;
+titulo.textContent = `${saudacao}, eu sou o  ${nome}!`;
 
 const botao = document.querySelector("#tema");
-botao.addEventListener("click", function () {
+botao.addEventListener("click", () => {
   document.body.classList.toggle("claro");
   if (document.body.classList.contains("claro")) {
     botao.textContent = "Modo Escuro";
